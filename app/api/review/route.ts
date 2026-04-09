@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Client } from "google-ads-api";
+import { GoogleAdsApi } from "google-ads-api";
 import { reviewDraft, scanLandingPageContent } from "@/lib/policy";
 import type { AdDraft, ReviewResponse } from "@/lib/types";
 
@@ -51,7 +51,7 @@ async function validateWithGoogleAds(draft: AdDraft, review: ReviewResponse) {
   }
 
   try {
-    const client = new Client({
+    const client = new GoogleAdsApi({
       client_id,
       client_secret,
       developer_token
