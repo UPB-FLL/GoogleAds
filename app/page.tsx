@@ -56,8 +56,8 @@ const defaultDraft: AdDraft = {
   countryCode: "US",
   finalUrl: "https://uncommonpathbrewing.com",
   audienceType: "none",
-  headlines: templates.food.headlines,
-  descriptions: templates.food.descriptions,
+  headlines: [...templates.food.headlines],
+  descriptions: [...templates.food.descriptions],
   notes: ""
 };
 
