@@ -8,7 +8,15 @@ type RequestBody = {
   runGoogleValidation?: boolean;
 };
 
-async function tryFetchLandingPage(url: string) {
+type LandingPageFetchResult =
+  | {
+      html: string;
+    }
+  | {
+      error: string;
+    };
+
+async function tryFetchLandingPage(url: string): Promise<LandingPageFetchResult> {
   try {
     const response = await fetch(url, {
       redirect: "follow",
